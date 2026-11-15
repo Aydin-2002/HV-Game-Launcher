@@ -51,3 +51,12 @@ Relative paths are resolved from the folder containing `Launcher.exe`. Absolute 
 The source code is included so users can inspect how the launcher works and build it themselves. The launcher reads its settings from `config.ini` and starts only the executable or script path configured there. The source does not include any game files.
 
 No open-source license is included in this package. If you want to grant others permission to modify or redistribute the code, add a license before publishing.
+### About This Project
+
+This project was created with the assistance of the free version of ChatGPT.
+
+I have no formal knowledge or experience in programming. I created this launcher purely out of personal interest and curiosity, with the help of AI.
+
+This is a personal project, developed as a hobby and shared publicly for anyone who may find it useful.
+
+I do not claim to be a professional programmer or software developer.
