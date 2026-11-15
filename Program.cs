@@ -79,6 +79,44 @@ internal sealed class LauncherForm : Form
         var buttonArea = new Panel { Dock = DockStyle.Fill, BackColor = BackColor };
         right.Controls.Add(buttonArea, 0, 1);
 
+        // Small, clickable developer/community links at the bottom corners.
+        var footer = new Panel { Dock = DockStyle.Bottom, Height = 24, BackColor = BackColor };
+        buttonArea.Controls.Add(footer);
+
+        var githubLink = new LinkLabel
+        {
+            Text = "GitHub: @Aydin-2002",
+            AutoSize = true,
+            Location = new Point(0, 4),
+            Font = new Font("Segoe UI", 8.5f),
+            LinkColor = Color.FromArgb(75, 95, 125),
+            ActiveLinkColor = Color.FromArgb(45, 65, 95),
+            VisitedLinkColor = Color.FromArgb(75, 95, 125),
+            Cursor = Cursors.Hand
+        };
+        githubLink.LinkClicked += (_, _) => OpenWebLink("https://github.com/Aydin-2002");
+        footer.Controls.Add(githubLink);
+
+        var telegramLink = new LinkLabel
+        {
+            Text = "Telegram: @pcgaminghub",
+            AutoSize = true,
+            Anchor = AnchorStyles.Top | AnchorStyles.Right,
+            Font = new Font("Segoe UI", 8.5f),
+            LinkColor = Color.FromArgb(75, 95, 125),
+            ActiveLinkColor = Color.FromArgb(45, 65, 95),
+            VisitedLinkColor = Color.FromArgb(75, 95, 125),
+            Cursor = Cursors.Hand
+        };
+        telegramLink.LinkClicked += (_, _) => OpenWebLink("https://t.me/pcgaminghub");
+        footer.Controls.Add(telegramLink);
+        void PositionTelegramLink()
+        {
+            telegramLink.Location = new Point(Math.Max(0, footer.ClientSize.Width - telegramLink.Width), 4);
+        }
+        footer.Resize += (_, _) => PositionTelegramLink();
+        PositionTelegramLink();
+
         var buttonGroup = new TableLayoutPanel {
             Size = new Size(440, 264), ColumnCount = 1, RowCount = 3,
             BackColor = BackColor, Margin = Padding.Empty, Padding = Padding.Empty
@@ -92,7 +130,8 @@ internal sealed class LauncherForm : Form
         void CenterButtonGroup()
         {
             buttonGroup.Left = Math.Max(0, (buttonArea.ClientSize.Width - buttonGroup.Width) / 2);
-            buttonGroup.Top = Math.Max(0, (buttonArea.ClientSize.Height - buttonGroup.Height) / 2);
+            int availableHeight = Math.Max(0, buttonArea.ClientSize.Height - footer.Height);
+            buttonGroup.Top = Math.Max(0, (availableHeight - buttonGroup.Height) / 2);
         }
         buttonArea.Resize += (_, _) => CenterButtonGroup();
         CenterButtonGroup();
@@ -100,6 +139,18 @@ internal sealed class LauncherForm : Form
         AddButton(buttonGroup, "Run VBS", RunScript, 0);
         AddButton(buttonGroup, "Play Game", LaunchGame, 1);
         AddButton(buttonGroup, "Close Launcher", Close, 2);
+    }
+
+    private static void OpenWebLink(string url)
+    {
+        try
+        {
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Could not open the link:\r\n{ex.Message}", "Open link failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
     private static void AddCoverPlaceholder(Panel panel, string gameName)
