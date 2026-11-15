@@ -35,7 +35,7 @@ WindowTitle=HV Game Launcher
 
 [Paths]
 GameEXE=Game.exe
-VBSFile=Setup.cmd
+VBSFile=VBS.cmd
 
 [Appearance]
 Icon=launcher.png
