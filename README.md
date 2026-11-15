@@ -1,3 +1,5 @@
+[English](README.md) | [فارسی](README.fa.md)
+
 # HV Game Launcher — Source Code
 
 A lightweight Windows game launcher built with C# and Windows Forms on .NET 8.
