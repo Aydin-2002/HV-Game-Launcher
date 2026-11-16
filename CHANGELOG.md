@@ -2,6 +2,49 @@
 
 All notable changes to **HV Game Launcher** are documented in this file.
 
+## [1.4.0 Beta] - 2026-11-17
+
+### Added
+- Introduced a redesigned user interface inspired by modern game launchers.
+- Added support for custom background images.
+- Added support for vertical game cover images.
+- Added 10 customizable Launch button colors.
+- Added white as a Launch button color option.
+- Added a new right-side toolbar:
+  - Customize
+  - Dark / Light Mode
+  - Check for Updates
+  - Telegram
+  - About Me
+- Added a Launch menu with separate options for running VBS scripts and launching the game.
+- Added background image configuration through `config.ini`.
+
+### Improved
+- Redesigned the launcher layout and visual appearance.
+- Improved cover image scaling and positioning.
+- Removed unnecessary empty space around cover images.
+- Improved Launch button positioning and sizing.
+- Launcher title color now follows the selected accent color.
+- Improved background image rendering to prevent stretching.
+- Appearance settings are now stored locally for each launcher instance.
+
+### Configuration
+- Added the `Background` option to the `[Appearance]` section.
+- Continued support for relative and absolute file paths.
+
+Example:
+
+```ini
+[Appearance]
+Icon=launcher.png
+Cover=cover.jpg
+Background=background.jpg
+```
+
+### Status
+- First beta release of the redesigned interface.
+- Further UI refinements and improvements are planned.
+
 ## [1.3.0] - 2026-11-16
 
 ### Fixed
