@@ -4,25 +4,28 @@ cd /d "%~dp0"
 
 where dotnet >nul 2>nul
 if errorlevel 1 (
-  echo .NET 8 SDK was not found.
-  echo Install the .NET 8 SDK, then run Build.bat again.
+  echo .NET 8 SDK was not found. Install it from https://dotnet.microsoft.com/download/dotnet/8.0
   pause
   exit /b 1
 )
 
-echo Building standalone Windows x64 launcher...
-dotnet publish "Launcher.csproj" -c Release -r win-x64 --self-contained true ^
-  -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true ^
-  -p:EnableCompressionInSingleFile=true -o "Publish"
+echo Restoring project for win-x64...
+dotnet restore "%~dp0Launcher.csproj" -r win-x64 --force
+if errorlevel 1 (
+  echo Restore failed.
+  pause
+  exit /b 1
+)
 
+echo Publishing project...
+dotnet publish "%~dp0Launcher.csproj" -c Release -r win-x64 --self-contained false --no-restore
 if errorlevel 1 (
   echo Build failed.
   pause
   exit /b 1
 )
 
-copy /Y "config.ini" "Publish\config.ini" >nul
-if not exist "Publish\Assets" mkdir "Publish\Assets"
 echo.
-echo Done: Publish\Launcher.exe
+echo Build complete. Output:
+echo bin\Release\net8.0-windows\win-x64\publish
 pause

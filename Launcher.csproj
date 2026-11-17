@@ -8,4 +8,7 @@
     <AssemblyName>Launcher</AssemblyName>
     <RootNamespace>GenericGameLauncher</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <None Update="config.ini" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
