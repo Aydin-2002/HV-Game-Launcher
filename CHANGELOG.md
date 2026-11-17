@@ -10,48 +10,37 @@
 
 All notable changes to **HV Game Launcher** are documented in this file.
 
-## [1.4.0 Beta] - 2026-11-17
+## [1.4.0] - 2026-11-17
 
 ### Added
-- Introduced a redesigned user interface inspired by modern game launchers.
-- Added support for custom background images.
+- Added support for a custom transparent logo above the game cover, including PNG and ICO image files.
+- Added support for custom launcher background images.
 - Added support for vertical game cover images.
-- Added 10 customizable Launch button colors.
-- Added white as a Launch button color option.
-- Added a new right-side toolbar:
-  - Customize
-  - Dark / Light Mode
-  - Check for Updates
-  - Telegram
-  - About Me
-- Added a Launch menu with separate options for running VBS scripts and launching the game.
-- Added background image configuration through `config.ini`.
+- Added 10 customizable Launch button colors, including white.
+- Added a five-button circular toolbar for customization, theme switching, update checking, Telegram, and About.
+- Added a Launch menu with separate options for launching the game and running a VBS script.
+- Added current-version information alongside the latest GitHub release version.
+- Added `Logo` and `Background` options to the `[Appearance]` section of `config.ini`.
 
 ### Improved
-- Redesigned the launcher layout and visual appearance.
-- Improved cover image scaling and positioning.
-- Removed unnecessary empty space around cover images.
-- Improved Launch button positioning and sizing.
-- Launcher title color now follows the selected accent color.
-- Improved background image rendering to prevent stretching.
-- Appearance settings are now stored locally for each launcher instance.
+- Redesigned the launcher interface with a modern game-launcher appearance.
+- Removed the centered title and placed the custom logo above the cover.
+- Improved cover image scaling, positioning, and spacing.
+- Refined the Launch button size and moved it to the bottom-right area of the launcher.
+- Improved the right-side toolbar layout and circular icon presentation.
+- Made the launcher title color follow the selected accent color.
+- Improved background image rendering to avoid unwanted stretching.
+- Added smooth animated transitions between Light and Dark themes.
+- Optimized theme transitions and repainting to reduce flickering, stuttering, and unnecessary redraws.
+- Saved appearance preferences locally for each launcher instance.
+- Preserved support for relative and absolute file paths.
 
-### Configuration
-- Added the `Background` option to the `[Appearance]` section.
-- Continued support for relative and absolute file paths.
+### Fixed
+- Fixed visual flickering and background glitches during theme changes.
+- Improved the stability and smoothness of switching between Light and Dark themes.
 
-Example:
-
-```ini
-[Appearance]
-Icon=launcher.png
-Cover=cover.jpg
-Background=background.jpg
-```
-
-### Status
-- First beta release of the redesigned interface.
-- Further UI refinements and improvements are planned.
+### Release
+- First stable release of the redesigned HV Game Launcher.
 
 ## [1.3.0] - 2026-11-16
 
@@ -108,48 +97,37 @@ Background=background.jpg
 
 تمام تغییرات مهم **HV Game Launcher** در این فایل ثبت می‌شوند.
 
-## [1.4.0 Beta] - 2026-11-17
+## [1.4.0] - 2026-11-17
 
 ### امکانات جدید
-- طراحی مجدد رابط کاربری با الهام از لانچرهای مدرن بازی.
-- اضافه شدن امکان استفاده از تصویر پس‌زمینه دلخواه.
+- اضافه شدن امکان نمایش لوگوی اختصاصی و شفاف در بالای تصویر کاور، با پشتیبانی از فایل‌های PNG و ICO.
+- اضافه شدن امکان استفاده از تصویر پس‌زمینه دلخواه برای لانچر.
 - اضافه شدن پشتیبانی از تصاویر کاور عمودی بازی‌ها.
-- اضافه شدن ۱۰ رنگ قابل انتخاب برای دکمه Launch.
-- اضافه شدن رنگ سفید به گزینه‌های رنگ دکمه Launch.
-- اضافه شدن نوار ابزار جدید در سمت راست:
-  - شخصی‌سازی (Customize)
-  - حالت تاریک / روشن (Dark / Light Mode)
-  - بررسی به‌روزرسانی‌ها (Check for Updates)
-  - تلگرام (Telegram)
-  - درباره من (About Me)
-- اضافه شدن منوی Launch با گزینه‌های جداگانه برای اجرای اسکریپت‌های VBS و اجرای بازی.
-- اضافه شدن امکان تنظیم مسیر تصویر پس‌زمینه از طریق فایل `config.ini`.
+- اضافه شدن ۱۰ رنگ قابل انتخاب برای دکمه Launch، شامل رنگ سفید.
+- اضافه شدن نوار ابزار دایره‌ای شامل پنج دکمه برای شخصی‌سازی، تغییر تم، بررسی به‌روزرسانی، تلگرام و درباره برنامه.
+- اضافه شدن منوی Launch با گزینه‌های جداگانه برای اجرای بازی و اجرای اسکریپت VBS.
+- اضافه شدن نمایش نسخه فعلی لانچر در کنار آخرین نسخه منتشرشده در گیت‌هاب.
+- اضافه شدن گزینه‌های `Logo` و `Background` به بخش `[Appearance]` در فایل `config.ini`.
 
 ### بهبودها
-- طراحی مجدد چیدمان و ظاهر لانچر.
-- بهبود نحوه نمایش و موقعیت تصویر کاور.
-- حذف فضای خالی غیرضروری اطراف تصاویر کاور.
-- بهبود اندازه و موقعیت دکمه Launch.
+- بازطراحی رابط کاربری با ظاهری مدرن و الهام‌گرفته از لانچرهای بازی.
+- حذف عنوان وسط صفحه و قرارگیری لوگوی اختصاصی در بالای کاور.
+- بهبود مقیاس‌بندی، موقعیت و فاصله تصویر کاور.
+- اصلاح اندازه دکمه Launch و انتقال آن به قسمت پایین سمت راست لانچر.
+- بهبود چیدمان نوار ابزار سمت راست و ظاهر دایره‌ای آیکون‌ها.
 - هماهنگ شدن رنگ عنوان لانچر با رنگ انتخاب‌شده.
-- بهبود نمایش تصویر پس‌زمینه برای جلوگیری از کشیدگی تصویر.
-- ذخیره تنظیمات ظاهری به‌صورت محلی برای هر نمونه از لانچر.
+- بهبود نمایش تصویر پس‌زمینه برای جلوگیری از کشیدگی نامناسب تصویر.
+- اضافه شدن انتقال انیمیشنی و روان بین تم‌های روشن و تاریک.
+- بهینه‌سازی تغییر تم و بازترسیم اجزای رابط کاربری برای کاهش پرش تصویر، لگ و بازترسیم‌های غیرضروری.
+- ذخیره تنظیمات ظاهری به‌صورت محلی و مستقل برای هر نمونه از لانچر.
+- حفظ پشتیبانی از مسیرهای نسبی و مطلق فایل‌ها.
 
-### تنظیمات
-- اضافه شدن گزینه `Background` به بخش `[Appearance]`.
-- ادامه پشتیبانی از مسیرهای نسبی و مطلق فایل‌ها.
-
-نمونه:
-
-```ini
-[Appearance]
-Icon=launcher.png
-Cover=cover.jpg
-Background=background.jpg
-```
+### رفع مشکلات
+- رفع پرش تصویر و مشکلات پس‌زمینه هنگام تغییر تم.
+- بهبود پایداری و روانی جابه‌جایی بین حالت روشن و تاریک.
 
 ### وضعیت انتشار
-- اولین نسخه آزمایشی رابط کاربری بازطراحی‌شده.
-- بهبودها و اصلاحات بیشتری برای رابط کاربری در نسخه‌های آینده برنامه‌ریزی شده‌اند.
+- انتشار اولین نسخه پایدار از رابط کاربری بازطراحی‌شده HV Game Launcher.
 
 ## [1.3.0] - 2026-11-16
 
