@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:primitives="clr-namespace:Avalonia.Controls.Primitives;assembly=Avalonia.Controls"
+        xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Base"
+        x:Class="GenericGameLauncher.Views.CustomizeWindow"
+        Title="Customize"
+        Width="360" Height="270"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        SystemDecorations="None"
+        TransparencyLevelHint="AcrylicBlur"
+        TransparencyBackgroundFallback="#D9AFAFAF"
+        Background="Transparent"
+        Foreground="{DynamicResource AppForegroundBrush}">
+    <Window.Resources>
+        <media:ExperimentalAcrylicMaterial x:Key="CustomizeAcrylicMaterial" TintColor="#8C8C8C" TintOpacity="0.1" MaterialOpacity="0.3" FallbackColor="#D9AFAFAF" />
+    </Window.Resources>
+    <Border CornerRadius="18" BorderBrush="{Binding NeonBrush}" BorderThickness="2" ClipToBounds="True" Background="Transparent">
+        <Grid Margin="20,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="CUSTOMIZE"
+                       FontSize="13" FontWeight="Bold"
+                       HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0"
+                       Foreground="{DynamicResource AppForegroundBrush}" />
+            <primitives:UniformGrid Grid.Row="1" Rows="2" Columns="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="104">
+                <Button Margin="4" Width="48" Height="48" Background="#FFFFFF" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="2" Command="{Binding SelectColorCommand}" CommandParameter="#FFFFFF" />
+                <Button Margin="4" Width="48" Height="48" Background="#E74C3C" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#E74C3C" />
+                <Button Margin="4" Width="48" Height="48" Background="#E67E22" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#E67E22" />
+                <Button Margin="4" Width="48" Height="48" Background="#F1C40F" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#F1C40F" />
+                <Button Margin="4" Width="48" Height="48" Background="#2ECC71" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#2ECC71" />
+                <Button Margin="4" Width="48" Height="48" Background="#8D6E63" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#8D6E63" />
+                <Button Margin="4" Width="48" Height="48" Background="#3498DB" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#3498DB" />
+                <Button Margin="4" Width="48" Height="48" Background="#9B59B6" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#9B59B6" />
+                <Button Margin="4" Width="48" Height="48" Background="#E84393" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#E84393" />
+                <Button Margin="4" Width="48" Height="48" Background="#7F8C8D" CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="1" Command="{Binding SelectColorCommand}" CommandParameter="#7F8C8D" />
+            </primitives:UniformGrid>
+            <Button Grid.Row="2" Content="APPLY" Height="40" CornerRadius="20" BorderBrush="{Binding NeonBrush}" BorderThickness="2" Background="{Binding LaunchButtonBackground}" Foreground="{Binding LaunchButtonForeground}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Click="OnApplyClick" />
+        </Grid>
+    </Border>
+</Window>

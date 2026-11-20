@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:GenericGameLauncher.ViewModels"
+        xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Base"
+        x:Class="GenericGameLauncher.Views.LaunchMenuWindow"
+        Title="Launch"
+        Width="280" Height="160"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        SystemDecorations="None"
+        TransparencyLevelHint="AcrylicBlur"
+        TransparencyBackgroundFallback="#D9AFAFAF"
+        Background="Transparent"
+        Foreground="{DynamicResource AppForegroundBrush}">
+    <Window.Resources>
+        <media:ExperimentalAcrylicMaterial x:Key="LaunchAcrylicMaterial" TintColor="#8C8C8C" TintOpacity="0.1" MaterialOpacity="0.3" FallbackColor="#D9AFAFAF" />
+    </Window.Resources>
+    <Border CornerRadius="12" BorderBrush="{Binding NeonBrush}" BorderThickness="2" ClipToBounds="True" Background="Transparent">
+        <Grid>
+            <ExperimentalAcrylicBorder Material="{StaticResource LaunchAcrylicMaterial}" CornerRadius="10" />
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+                <Button Content="Run VBS" Command="{Binding RunScriptCommand}" Width="220" Height="44" FontSize="13" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CornerRadius="22" Background="{Binding LaunchButtonBackground}" Foreground="{Binding LaunchButtonForeground}" BorderBrush="{Binding NeonBrush}" BorderThickness="2" />
+                <Button Content="Run Game" Command="{Binding LaunchGameCommand}" Width="220" Height="44" FontSize="13" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CornerRadius="22" Background="{Binding LaunchButtonBackground}" Foreground="{Binding LaunchButtonForeground}" BorderBrush="{Binding NeonBrush}" BorderThickness="2" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

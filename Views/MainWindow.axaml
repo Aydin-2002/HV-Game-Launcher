@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:GenericGameLauncher.ViewModels"
+        xmlns:local="clr-namespace:GenericGameLauncher.ViewModels"
+        xmlns:svg="clr-namespace:Avalonia.Svg.Skia;assembly=Svg.Controls.Skia.Avalonia"
+        x:Class="GenericGameLauncher.Views.MainWindow"
+        Title="{Binding WindowTitle}"
+        Width="1040" Height="620"
+        MinWidth="900" MinHeight="540"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        SystemDecorations="None"
+        Background="Transparent"
+        Foreground="{DynamicResource AppForegroundBrush}">
+    <Window.Resources>
+        <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
+    </Window.Resources>
+    <Border x:Name="MainSurface" CornerRadius="18" BorderBrush="{Binding NeonBrush}" BorderThickness="2" ClipToBounds="True" Background="{DynamicResource AppBackgroundBrush}">
+        <Grid>
+            <Image x:Name="BackgroundImageView" Source="{Binding BackgroundImage}" Stretch="UniformToFill" Opacity="0.75" />
+            <Grid ColumnDefinitions="320,*,62">
+                <Grid Grid.Column="0" x:Name="CoverHost" Margin="14">
+                    <Border Width="275" Height="93" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,8,0,0" CornerRadius="10" ClipToBounds="True" Background="Transparent">
+                        <Image Source="{Binding LogoImage}" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <Border x:Name="CoverBorder" Width="276" Height="418" CornerRadius="12" Margin="9,75,0,0" ClipToBounds="True" Background="Transparent" BorderBrush="{Binding NeonBrush}" BorderThickness="2">
+                        <Image Source="{Binding CoverImage}" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image.Clip>
+                                <RectangleGeometry Rect="0,0,272,414" RadiusX="12" RadiusY="12" />
+                            </Image.Clip>
+                        </Image>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="28,18,24,18">
+                </Grid>
+                <StackPanel Grid.Column="2" Margin="-4,8,0,0" Spacing="10" VerticalAlignment="Top">
+                    <Button Command="{Binding CustomizeCommand}" Width="48" Height="48" CornerRadius="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{Binding NeonBrush}" BorderThickness="2" Background="{Binding LaunchButtonBackground}">
+                        <svg:Svg Path="/Icons/palette.svg" Width="24" Height="24" Stretch="Uniform" />
+                    </Button>
+                    <Button Command="{Binding ToggleThemeCommand}" Width="48" Height="48" CornerRadius="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{Binding NeonBrush}" BorderThickness="2" Background="{Binding LaunchButtonBackground}">
+                        <Grid Width="24" Height="24">
+                            <svg:Svg Path="/Icons/sun.svg" Width="24" Height="24" Stretch="Uniform" IsVisible="{Binding IsDarkMode, Converter={StaticResource BoolInverterConverter}}" />
+                            <svg:Svg Path="/Icons/moon.svg" Width="24" Height="24" Stretch="Uniform" IsVisible="{Binding IsDarkMode}" />
+                        </Grid>
+                    </Button>
+                    <Button Command="{Binding OpenLinkCommand}" CommandParameter="https://t.me/pcgaminghub" Width="48" Height="48" CornerRadius="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{Binding NeonBrush}" BorderThickness="2" Background="{Binding LaunchButtonBackground}">
+                        <svg:Svg Path="/Icons/send.svg" Width="24" Height="24" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,0,0,0" />
+                    </Button>
+                    <Button Command="{Binding ShowAboutMeCommand}" Width="48" Height="48" CornerRadius="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{Binding NeonBrush}" BorderThickness="2" Background="{Binding LaunchButtonBackground}">
+                        <svg:Svg Path="/Icons/user-round.svg" Width="24" Height="24" Stretch="Uniform" />
+                    </Button>
+                </StackPanel>
+                <Grid Grid.ColumnSpan="3">
+                    <Button Content="CLOSE" Command="{Binding CloseAppCommand}" Width="142" Height="44" CornerRadius="22" HorizontalAlignment="Left" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Margin="23,0,0,10" Background="{Binding LaunchButtonBackground}" Foreground="{Binding LaunchButtonForeground}" BorderBrush="{Binding NeonBrush}" BorderThickness="2" />
+                    <Button Content="LAUNCH" Command="{Binding ShowLaunchMenuCommand}" Width="143" Height="44" CornerRadius="22" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Margin="0,0,23,10" Background="{Binding LaunchButtonBackground}" Foreground="{Binding LaunchButtonForeground}" BorderBrush="{Binding NeonBrush}" BorderThickness="2" />
+                </Grid>
+            </Grid>
+            <Canvas x:Name="SparkCanvas" />
+        </Grid>
+    </Border>
+</Window>
