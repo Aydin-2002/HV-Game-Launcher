@@ -65,4 +65,5 @@ HV Game Launcher is a personal hobby project created with assistance from the fr
 
 ## License
 
-No open-source license is currently included. Unless a license is added, reuse, modification, and redistribution are not granted by this repository.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for the full license text. The license applies to this project's original code; third-party libraries and assets remain subject to their own licenses.
+
