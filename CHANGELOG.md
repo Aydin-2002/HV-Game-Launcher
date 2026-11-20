@@ -16,33 +16,33 @@ English
 
 This is the final release of HV Game Launcher. The application was rewritten from the ground up, replacing the original Windows Forms implementation with a modern Avalonia-based launcher while preserving and expanding its core functionality.
 
-Added
+###Added
 
-Added a redesigned launcher interface with a cover image, custom logo, background image, and circular toolbar.
+- Added a redesigned launcher interface with a cover image, custom logo, background image, and circular toolbar.
 
-Added support for 10 customizable accent colors.
+- Added support for 10 customizable accent colors.
 
-Added Light and Dark themes.
+- Added Light and Dark themes.
 
-Added a Launch menu with separate options to run the game or its VBS script.
+- Added a Launch menu with separate options to run the game or its VBS script.
 
-Added customizable cover, logo, application icon, and background image support.
+- Added customizable cover, logo, application icon, and background image support.
 
-Added configuration options in config.ini for game paths and appearance assets.
+- Added configuration options in config.ini for game paths and appearance assets.
 
-Added support for relative and absolute file paths.
+- Added support for relative and absolute file paths.
 
-Improved
+###Improved
 
-Rebuilt the application using Avalonia and .NET 8.
+- Rebuilt the application using Avalonia and .NET 8.
 
-Improved image scaling and clipping so cover and background images stay within their display areas.
+- Improved image scaling and clipping so cover and background images stay within their display areas.
 
-Refined the launcher layout, panels, buttons, and icons.
+- Refined the launcher layout, panels, buttons, and icons.
 
-Improved theme switching and saved appearance preferences locally.
+- Improved theme switching and saved appearance preferences locally.
 
-Requirements
+###Requirements
 
 Windows x64
 
@@ -139,33 +139,33 @@ Windows x64
 
 این نسخه، انتشار نهایی HV Game Launcher است. برنامه از پایه بازنویسی شده و پیاده‌سازی اولیهٔ Windows Forms با لانچری مدرن مبتنی بر Avalonia جایگزین شده است؛ قابلیت‌های اصلی حفظ و امکانات ظاهری آن گسترش یافته‌اند.
 
-امکانات جدید
+###امکانات جدید
 
-اضافه شدن رابط کاربری بازطراحی‌شده با تصویر کاور، لوگوی اختصاصی، تصویر پس‌زمینه و نوار ابزار دایره‌ای.
+- اضافه شدن رابط کاربری بازطراحی‌شده با تصویر کاور، لوگوی اختصاصی، تصویر پس‌زمینه و نوار ابزار دایره‌ای.
 
-اضافه شدن ۱۰ رنگ قابل انتخاب برای شخصی‌سازی رنگ اصلی برنامه.
+- اضافه شدن ۱۰ رنگ قابل انتخاب برای شخصی‌سازی رنگ اصلی برنامه.
 
-اضافه شدن تم‌های روشن و تاریک.
+- اضافه شدن تم‌های روشن و تاریک.
 
-اضافه شدن منوی Launch با گزینه‌های جداگانه برای اجرای بازی و اجرای فایل VBS.
+- اضافه شدن منوی Launch با گزینه‌های جداگانه برای اجرای بازی و اجرای فایل VBS.
 
-اضافه شدن امکان استفاده از تصویر کاور، لوگو، آیکون برنامه و تصویر پس‌زمینهٔ دلخواه.
+- اضافه شدن امکان استفاده از تصویر کاور، لوگو، آیکون برنامه و تصویر پس‌زمینهٔ دلخواه.
 
-اضافه شدن گزینه‌های تنظیم مسیر بازی و تصاویر ظاهری به فایل config.ini.
+- اضافه شدن گزینه‌های تنظیم مسیر بازی و تصاویر ظاهری به فایل config.ini.
 
-پشتیبانی از مسیرهای نسبی و مطلق فایل‌ها.
+- پشتیبانی از مسیرهای نسبی و مطلق فایل‌ها.
 
-بهبودها
+###بهبودها
 
-بازنویسی برنامه با استفاده از Avalonia و .NET 8.
+- بازنویسی برنامه با استفاده از Avalonia و .NET 8.
 
-بهبود مقیاس‌بندی و برش تصاویر تا کاور و پس‌زمینه از محدودهٔ نمایش خود بیرون نزنند.
+- بهبود مقیاس‌بندی و برش تصاویر تا کاور و پس‌زمینه از محدودهٔ نمایش خود بیرون نزنند.
 
-اصلاح چیدمان لانچر، پنل‌ها، دکمه‌ها و آیکون‌ها.
+- اصلاح چیدمان لانچر، پنل‌ها، دکمه‌ها و آیکون‌ها.
 
-بهبود تغییر تم و ذخیرهٔ محلی تنظیمات ظاهری.
+- بهبود تغییر تم و ذخیرهٔ محلی تنظیمات ظاهری.
 
-پیش‌نیازها
+###پیش‌نیازها
 
 ویندوز ۶۴ بیتی
 
